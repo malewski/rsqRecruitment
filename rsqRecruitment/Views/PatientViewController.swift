@@ -20,7 +20,7 @@ class PatientViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorColor = .clear
-
+        tableView.backgroundColor = UIColor(red: 0.94, green: 0.86, blue: 0.76, alpha: 1.0)
         tableView.register(PatientViewCell.self, forCellReuseIdentifier: String(describing: PatientViewCell.self))
         return tableView
     }()

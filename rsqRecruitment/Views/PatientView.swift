@@ -22,7 +22,7 @@ class PatientViewCell: UITableViewCell {
     
     let backView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 0.90, green: 0.71, blue: 0.49, alpha: 0.8)
+        view.backgroundColor = UIColor(red: 0.90, green: 0.71, blue: 0.49, alpha: 1.0)
         view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -47,6 +47,7 @@ class PatientViewCell: UITableViewCell {
     }()
 
     func setupView() {
+        backgroundColor = UIColor(red: 0.94, green: 0.86, blue: 0.76, alpha: 1.0)
         addSubview(backView)
         backView.addSubview(ageLabel)
         backView.addSubview(dateLabel)
