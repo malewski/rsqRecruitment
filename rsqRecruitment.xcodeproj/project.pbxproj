@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D310DFF42344C97500D8E471 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310DFF32344C97500D8E471 /* Patient.swift */; };
+		D310DFF62344C98800D8E471 /* PatientPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310DFF52344C98800D8E471 /* PatientPresenter.swift */; };
+		D310DFF82344D33500D8E471 /* PatientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D310DFF72344D33500D8E471 /* PatientService.swift */; };
+		D34FA96D2343F5FE00FD5865 /* PatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FA96C2343F5FE00FD5865 /* PatientView.swift */; };
+		D34FA96F2343F62500FD5865 /* PatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FA96E2343F62500FD5865 /* PatientViewController.swift */; };
 		D36D6FE62343F1AB005AA574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D6FE52343F1AB005AA574 /* AppDelegate.swift */; };
-		D36D6FE82343F1AB005AA574 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D6FE72343F1AB005AA574 /* ViewController.swift */; };
-		D36D6FEB2343F1AB005AA574 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36D6FE92343F1AB005AA574 /* Main.storyboard */; };
 		D36D6FED2343F1AE005AA574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36D6FEC2343F1AE005AA574 /* Assets.xcassets */; };
 		D36D6FF02343F1AE005AA574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36D6FEE2343F1AE005AA574 /* LaunchScreen.storyboard */; };
 		D36D6FFB2343F1AF005AA574 /* rsqRecruitmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D6FFA2343F1AF005AA574 /* rsqRecruitmentTests.swift */; };
+		D3C6544F2344FF00009EDF50 /* DrugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6544E2344FF00009EDF50 /* DrugViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +30,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D310DFF32344C97500D8E471 /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		D310DFF52344C98800D8E471 /* PatientPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientPresenter.swift; sourceTree = "<group>"; };
+		D310DFF72344D33500D8E471 /* PatientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PatientService.swift; path = ../PatientService.swift; sourceTree = "<group>"; };
+		D34FA96C2343F5FE00FD5865 /* PatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientView.swift; sourceTree = "<group>"; };
+		D34FA96E2343F62500FD5865 /* PatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientViewController.swift; sourceTree = "<group>"; };
 		D36D6FE22343F1AB005AA574 /* rsqRecruitment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rsqRecruitment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36D6FE52343F1AB005AA574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D36D6FE72343F1AB005AA574 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D36D6FEA2343F1AB005AA574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D36D6FEC2343F1AE005AA574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D36D6FEF2343F1AE005AA574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D36D6FF12343F1AE005AA574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D36D6FF62343F1AF005AA574 /* rsqRecruitmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rsqRecruitmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36D6FFA2343F1AF005AA574 /* rsqRecruitmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rsqRecruitmentTests.swift; sourceTree = "<group>"; };
 		D36D6FFC2343F1AF005AA574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3C6544E2344FF00009EDF50 /* DrugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D310DFF92344D33E00D8E471 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D310DFF72344D33500D8E471 /* PatientService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D31FD6622344C85800830F81 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				D310DFF52344C98800D8E471 /* PatientPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		D34FA9702343F62D00FD5865 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D34FA96C2343F5FE00FD5865 /* PatientView.swift */,
+				D34FA96E2343F62500FD5865 /* PatientViewController.swift */,
+				D3C6544E2344FF00009EDF50 /* DrugViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D34FA9752344C61600FD5865 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D310DFF32344C97500D8E471 /* Patient.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D36D6FD92343F1AB005AA574 = {
 			isa = PBXGroup;
 			children = (
@@ -77,9 +119,11 @@
 		D36D6FE42343F1AB005AA574 /* rsqRecruitment */ = {
 			isa = PBXGroup;
 			children = (
+				D34FA9752344C61600FD5865 /* Model */,
+				D34FA9702343F62D00FD5865 /* Views */,
+				D31FD6622344C85800830F81 /* Presenters */,
+				D310DFF92344D33E00D8E471 /* Services */,
 				D36D6FE52343F1AB005AA574 /* AppDelegate.swift */,
-				D36D6FE72343F1AB005AA574 /* ViewController.swift */,
-				D36D6FE92343F1AB005AA574 /* Main.storyboard */,
 				D36D6FEC2343F1AE005AA574 /* Assets.xcassets */,
 				D36D6FEE2343F1AE005AA574 /* LaunchScreen.storyboard */,
 				D36D6FF12343F1AE005AA574 /* Info.plist */,
@@ -179,7 +223,6 @@
 			files = (
 				D36D6FF02343F1AE005AA574 /* LaunchScreen.storyboard in Resources */,
 				D36D6FED2343F1AE005AA574 /* Assets.xcassets in Resources */,
-				D36D6FEB2343F1AB005AA574 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +240,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D36D6FE82343F1AB005AA574 /* ViewController.swift in Sources */,
+				D34FA96D2343F5FE00FD5865 /* PatientView.swift in Sources */,
+				D310DFF82344D33500D8E471 /* PatientService.swift in Sources */,
+				D34FA96F2343F62500FD5865 /* PatientViewController.swift in Sources */,
+				D3C6544F2344FF00009EDF50 /* DrugViewController.swift in Sources */,
+				D310DFF62344C98800D8E471 /* PatientPresenter.swift in Sources */,
 				D36D6FE62343F1AB005AA574 /* AppDelegate.swift in Sources */,
+				D310DFF42344C97500D8E471 /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +269,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D36D6FE92343F1AB005AA574 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D36D6FEA2343F1AB005AA574 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D36D6FEE2343F1AE005AA574 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
