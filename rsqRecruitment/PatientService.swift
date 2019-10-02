@@ -10,7 +10,7 @@ import Foundation
 
 class PatientService {
 
-    func getPatient(completion: @escaping ([Result]?) -> () ) {
+    func getPatient(completion: @escaping ([PatientData]?) -> () ) {
         let url = URL(string: "https://api.fda.gov/drug/event.json?limit=10")!
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
@@ -20,7 +20,7 @@ class PatientService {
             }
             do {
                 let decoder = JSONDecoder()
-                let model = try decoder.decode(APIResponse.self, from: data)
+                let model = try decoder.decode(PatientsList.self, from: data)
                 DispatchQueue.main.async {
                     completion(model.results)
                 }

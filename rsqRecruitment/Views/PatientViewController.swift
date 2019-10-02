@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PatientViewDelegate: class {
-    func displayPatient(patientList: [Result])
+    func displayPatient(patientList: [PatientData])
     func showDrugs(drugs: [Drug])
 }
 
@@ -25,7 +25,7 @@ class PatientViewController: UIViewController {
         return tableView
     }()
 
-    private var patientList = [Result]()
+    private var patientList = [PatientData]()
     private let patientPresenter = PatientPresenter(service: PatientService())
 
     override func viewDidLoad() {
@@ -73,7 +73,7 @@ extension PatientViewController: UITableViewDataSource {
 
 extension PatientViewController: PatientViewDelegate {
 
-    func displayPatient(patientList: [Result]) {
+    func displayPatient(patientList: [PatientData]) {
         self.patientList = patientList
         self.tableView.reloadData()
     }
