@@ -8,32 +8,55 @@
 
 import UIKit
 
-protocol PatientViewDelegate: NSObject {
+protocol PatientViewDelegate: class {
     func displayPatient(patientList: [Result])
     func showDrugs(drugs: [Drug])
 }
 
-class PatientViewController: UITableViewController {
+class PatientViewController: UIViewController {
+
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorColor = .clear
+
+        tableView.register(PatientViewCell.self, forCellReuseIdentifier: String(describing: PatientViewCell.self))
+        return tableView
+    }()
 
     private var patientList = [Result]()
-    private let customView = PatientView()
     private let patientPresenter = PatientPresenter(service: PatientService())
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView = customView
         self.patientPresenter.setViewDelegate(patientViewDelegate: self)
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
     }
 
 }
 
-extension PatientViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return patientList.count
+extension PatientViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.patientPresenter.selectPatient(patient: patientList[indexPath.row].patient)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: customView.cellIdentifier, for: indexPath) as! PatientViewCell
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+}
+
+extension PatientViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PatientViewCell.self), for: indexPath) as! PatientViewCell
         if let age = patientList[indexPath.row].patient.age {
             cell.ageLabel.text = "Pacjent: wiek \(age)"
         }
@@ -43,15 +66,8 @@ extension PatientViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-}
-
-extension PatientViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(patientList[indexPath.row])
-        self.patientPresenter.selectPatient(patient: patientList[indexPath.row].patient)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return patientList.count
     }
 }
 
@@ -65,8 +81,7 @@ extension PatientViewController: PatientViewDelegate {
     func showDrugs(drugs: [Drug]) {
         let nextViewController = DrugViewController()
         nextViewController.drugs = drugs
-        nextViewController.navigationController?.title = "Drugs"
-        self.show(nextViewController, sender: nil)
+        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 
 }

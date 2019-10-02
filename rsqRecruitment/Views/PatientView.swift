@@ -8,33 +8,6 @@
 
 import UIKit
 
-class PatientView: UITableView {
-    
-    let cellIdentifier = "patientCell"
-
-    init() {
-        super.init(frame: .zero, style: .plain)
-        register(PatientViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        setupTableView()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-
-    private func setupTableView() {
-        self.separatorColor = .clear
-        translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: self.topAnchor),
-            leftAnchor.constraint(equalTo: self.leftAnchor),
-            rightAnchor.constraint(equalTo: self.rightAnchor),
-            bottomAnchor.constraint(equalTo: self.bottomAnchor)
-            ])
-    }
-}
-
 class PatientViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -47,9 +20,9 @@ class PatientViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let cellView: UIView = {
+    let backView: UIView = {
         let view = UIView()
-        view.backgroundColor = .blue
+        view.backgroundColor = UIColor(red: 0.90, green: 0.71, blue: 0.49, alpha: 0.8)
         view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -74,29 +47,29 @@ class PatientViewCell: UITableViewCell {
     }()
 
     func setupView() {
-        addSubview(cellView)
-        cellView.addSubview(ageLabel)
-        cellView.addSubview(dateLabel)
+        addSubview(backView)
+        backView.addSubview(ageLabel)
+        backView.addSubview(dateLabel)
 
         NSLayoutConstraint.activate([
-            cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            cellView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            cellView.leftAnchor.constraint(equalTo: self.leftAnchor),
-            cellView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5)
+            backView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            backView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
+            backView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
+            backView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5)
             ])
 
         NSLayoutConstraint.activate([
             ageLabel.heightAnchor.constraint(equalToConstant: 50),
             ageLabel.widthAnchor.constraint(equalToConstant: 250),
-            ageLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20),
-            ageLabel.topAnchor.constraint(equalTo: cellView.topAnchor)
+            ageLabel.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 20),
+            ageLabel.topAnchor.constraint(equalTo: backView.topAnchor)
             ])
 
         NSLayoutConstraint.activate([
             dateLabel.heightAnchor.constraint(equalToConstant: 50),
             dateLabel.widthAnchor.constraint(equalToConstant: 250),
-            dateLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 20),
-            dateLabel.bottomAnchor.constraint(equalTo: cellView.bottomAnchor)
+            dateLabel.leftAnchor.constraint(equalTo: backView.leftAnchor, constant: 20),
+            dateLabel.bottomAnchor.constraint(equalTo: backView.bottomAnchor)
             ])
     }
 }
