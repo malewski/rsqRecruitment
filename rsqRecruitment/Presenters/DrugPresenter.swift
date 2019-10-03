@@ -9,9 +9,14 @@
 class DrugPresenter {
 
     private let view: DrugView
+    private let drugs: [Drug]
 
     init(view: DrugView, drugs: [Drug]) {
         self.view = view
+        self.drugs = drugs
+    }
+
+    func viewDidLoad() {
         self.view.showDrugs(drugs: drugs)
     }
 

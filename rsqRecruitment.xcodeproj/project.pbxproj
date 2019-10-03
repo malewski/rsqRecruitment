@@ -21,6 +21,7 @@
 		D3C6545723455E46009EDF50 /* PatientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6545623455E46009EDF50 /* PatientData.swift */; };
 		D3C6545923455E69009EDF50 /* Drug.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6545823455E69009EDF50 /* Drug.swift */; };
 		D3C6545B23456B08009EDF50 /* DrugPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6545A23456B08009EDF50 /* DrugPresenter.swift */; };
+		D3C6545D2346B8D9009EDF50 /* DrugPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6545C2346B8D9009EDF50 /* DrugPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		D3C6545623455E46009EDF50 /* PatientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientData.swift; sourceTree = "<group>"; };
 		D3C6545823455E69009EDF50 /* Drug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drug.swift; sourceTree = "<group>"; };
 		D3C6545A23456B08009EDF50 /* DrugPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugPresenter.swift; sourceTree = "<group>"; };
+		D3C6545C2346B8D9009EDF50 /* DrugPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D36D6FFA2343F1AF005AA574 /* PatientPresenterTests.swift */,
+				D3C6545C2346B8D9009EDF50 /* DrugPresenterTests.swift */,
 				D36D6FFC2343F1AF005AA574 /* Info.plist */,
 			);
 			path = rsqRecruitmentTests;
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3C6545D2346B8D9009EDF50 /* DrugPresenterTests.swift in Sources */,
 				D36D6FFB2343F1AF005AA574 /* PatientPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
