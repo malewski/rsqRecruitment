@@ -8,10 +8,10 @@
 
 class PatientPresenter {
 
-    private let service: PatientService
-    private let view: PatientViewController
+    private let service: DownloadPatient
+    private let view: PatientView
 
-    init(view: PatientViewController, service: PatientService) {
+    init(view: PatientView, service: DownloadPatient) {
         self.view = view
         self.service = service
     }
@@ -21,7 +21,7 @@ class PatientPresenter {
     }
 
     private func getPatient() {
-        service.getPatient(
+        service.download(
             success: { (data) in
             if let data = data {
                 self.view.displayPatient(patientList: data)
@@ -31,8 +31,8 @@ class PatientPresenter {
         })
     }
 
-    func selectPatient(patient: Patient) {
-        view.showDrugs(drugs: patient.drugs)
+    func selectPatient(drugs: [Drug]) {
+        view.showDrugs(drugs: drugs)
     }
 
 }

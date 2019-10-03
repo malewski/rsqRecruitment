@@ -8,9 +8,9 @@
 
 class DrugPresenter {
 
-    private let view: DrugViewController
+    private let view: DrugView
 
-    init(view: DrugViewController, drugs: [Drug]) {
+    init(view: DrugView, drugs: [Drug]) {
         self.view = view
         self.view.showDrugs(drugs: drugs)
     }

@@ -8,12 +8,19 @@
 
 import Foundation
 
+protocol DownloadPatient {
+    func download(success: @escaping ([PatientData]?) -> Void, failure: @escaping (Error?) -> Void)
+}
+
 class PatientService {
 
-    func getPatient(success: @escaping ([PatientData]?) -> Void, failure: @escaping (Error?) -> Void) {
-        let url = URL(string: "https://api.fda.gov/drug/event.json?limit=10")!
-        let configuration = URLSessionConfiguration.default
-        let session = URLSession(configuration: configuration)
+    private let url = URL(string: "https://api.fda.gov/drug/event.json?limit=10")!
+    private let session = URLSession(configuration: URLSessionConfiguration.default)
+}
+
+extension PatientService: DownloadPatient {
+
+    func download(success: @escaping ([PatientData]?) -> Void, failure: @escaping (Error?) -> Void) {
         let task = session.dataTask(with: url) { (data, response, error) -> Void in
             guard error == nil else {
                 failure(error)
@@ -32,7 +39,6 @@ class PatientService {
                 failure(error)
             }
         }
-
         task.resume()
     }
 

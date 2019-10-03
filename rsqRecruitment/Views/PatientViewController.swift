@@ -49,7 +49,7 @@ class PatientViewController: UIViewController {
 
 extension PatientViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.selectPatient(patient: patientList[indexPath.row].patient)
+        presenter.selectPatient(drugs: patientList[indexPath.row].patient.drugs)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
