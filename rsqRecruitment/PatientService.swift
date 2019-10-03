@@ -23,7 +23,9 @@ extension PatientService: DownloadPatient {
     func download(success: @escaping ([PatientData]?) -> Void, failure: @escaping (Error?) -> Void) {
         let task = session.dataTask(with: url) { (data, response, error) -> Void in
             guard error == nil else {
-                failure(error)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
                 return
             }
             guard let data = data else {
@@ -36,7 +38,9 @@ extension PatientService: DownloadPatient {
                     success(model.results)
                 }
             } catch let error {
-                failure(error)
+                DispatchQueue.main.async {
+                    failure(error)
+                }
             }
         }
         task.resume()

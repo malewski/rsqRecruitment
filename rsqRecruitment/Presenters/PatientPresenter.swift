@@ -27,7 +27,9 @@ class PatientPresenter {
                 self.view.displayPatient(patientList: data)
             }
         }, failure: { (error) in
-            print(error?.localizedDescription)
+            if let error = error {
+                self.view.showAlert(text: error.localizedDescription)
+            }
         })
     }
 

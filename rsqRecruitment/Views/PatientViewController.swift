@@ -11,6 +11,7 @@ import UIKit
 protocol PatientView: class {
     func displayPatient(patientList: [PatientData])
     func showDrugs(drugs: [Drug])
+    func showAlert(text: String)
 }
 
 class PatientViewController: UIViewController {
@@ -86,6 +87,14 @@ extension PatientViewController: PatientView {
         let nextViewController = DrugViewController()
         nextViewController.presenter = DrugPresenter(view: nextViewController, drugs: drugs)
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+
+    func showAlert(text: String) {
+        let alert = UIAlertController(title: "Error", message: text, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        self.present(alert, animated: true)
     }
 
 }
