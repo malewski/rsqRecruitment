@@ -10,11 +10,15 @@ import Foundation
 
 class PatientService {
 
-    func getPatient(completion: @escaping ([PatientData]?) -> () ) {
+    func getPatient(success: @escaping ([PatientData]?) -> Void, failure: @escaping (Error?) -> Void) {
         let url = URL(string: "https://api.fda.gov/drug/event.json?limit=10")!
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
         let task = session.dataTask(with: url) { (data, response, error) -> Void in
+            guard error == nil else {
+                failure(error)
+                return
+            }
             guard let data = data else {
                 return
             }
@@ -22,10 +26,10 @@ class PatientService {
                 let decoder = JSONDecoder()
                 let model = try decoder.decode(PatientsList.self, from: data)
                 DispatchQueue.main.async {
-                    completion(model.results)
+                    success(model.results)
                 }
-            } catch {
-                print(error)
+            } catch let error {
+                failure(error)
             }
         }
 

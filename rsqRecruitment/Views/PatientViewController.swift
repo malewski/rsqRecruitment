@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PatientViewDelegate: class {
+protocol PatientView: class {
     func displayPatient(patientList: [PatientData])
     func showDrugs(drugs: [Drug])
 }
@@ -25,12 +25,13 @@ class PatientViewController: UIViewController {
         return tableView
     }()
 
-    private var patientList = [PatientData]()
-    private let patientPresenter = PatientPresenter(service: PatientService())
+    private var patientList: [PatientData] = []
+    var presenter: PatientPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.patientPresenter.setViewDelegate(patientViewDelegate: self)
+        presenter.viewDidLoad()
+        
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -45,7 +46,7 @@ class PatientViewController: UIViewController {
 
 extension PatientViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.patientPresenter.selectPatient(patient: patientList[indexPath.row].patient)
+        presenter.selectPatient(patient: patientList[indexPath.row].patient)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
@@ -61,7 +62,7 @@ extension PatientViewController: UITableViewDataSource {
             cell.ageLabel.text = "Pacjent: wiek \(age)"
         }
         if let date = patientList[indexPath.row].date {
-            cell.dateLabel.text = "Data recepty: \(date)"
+            cell.dateLabel.text = "Data recepty: \(date.convertDate())"
         }
         return cell
     }
@@ -71,17 +72,31 @@ extension PatientViewController: UITableViewDataSource {
     }
 }
 
-extension PatientViewController: PatientViewDelegate {
+extension PatientViewController: PatientView {
 
     func displayPatient(patientList: [PatientData]) {
         self.patientList = patientList
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
 
     func showDrugs(drugs: [Drug]) {
         let nextViewController = DrugViewController()
         nextViewController.drugs = drugs
-        self.navigationController?.pushViewController(nextViewController, animated: true)
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
 
+}
+
+private extension String {
+    func convertDate() -> String {
+        let formater = DateFormatter()
+        formater.dateFormat = "YYYYMMDD"
+        let date = formater.date(from: self)
+        formater.dateFormat = "DD.MM.YYYY"
+        if let date = date {
+            return formater.string(from: date)
+        } else {
+            return self
+        }
+    }
 }

@@ -6,32 +6,33 @@
 //  Copyright © 2019 Jan Malewski. All rights reserved.
 //
 
-import Foundation
-
 class PatientPresenter {
 
-    private let patientService: PatientService
-    weak private var patientViewDelegate: PatientViewDelegate?
+    private let service: PatientService
+    private let view: PatientViewController
 
-    init(service: PatientService) {
-        self.patientService = service
-        self.getPatient()
+    init(view: PatientViewController, service: PatientService) {
+        self.view = view
+        self.service = service
     }
 
-    func setViewDelegate(patientViewDelegate: PatientViewDelegate?){
-        self.patientViewDelegate = patientViewDelegate
+    func viewDidLoad() {
+        getPatient()
     }
 
-    func getPatient() {
-        patientService.getPatient { (result) in
-            if let result = result {
-                self.patientViewDelegate?.displayPatient(patientList: result)
+    private func getPatient() {
+        service.getPatient(
+            success: { (data) in
+            if let data = data {
+                self.view.displayPatient(patientList: data)
             }
-        }
+        }, failure: { (error) in
+            print(error?.localizedDescription)
+        })
     }
 
     func selectPatient(patient: Patient) {
-        self.patientViewDelegate?.showDrugs(drugs: patient.drugs)
+        view.showDrugs(drugs: patient.drugs)
     }
 
 }

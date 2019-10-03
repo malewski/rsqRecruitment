@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow()
-        let navigationController = UINavigationController(rootViewController: PatientViewController())
+        let homeViewController = PatientViewController()
+        homeViewController.presenter = PatientPresenter(view: homeViewController, service: PatientService())
+        let navigationController = UINavigationController(rootViewController: homeViewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
