@@ -6,7 +6,7 @@
 //  Copyright © 2019 Jan Malewski. All rights reserved.
 //
 
-struct PatientData: Decodable {
+struct PatientData: Decodable, Equatable {
     let patient: Patient
     let date: String?
 

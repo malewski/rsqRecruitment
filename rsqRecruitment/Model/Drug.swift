@@ -6,7 +6,7 @@
 //  Copyright © 2019 Jan Malewski. All rights reserved.
 //
 
-struct Drug: Decodable {
+struct Drug: Decodable, Equatable {
     let name: String
 
     enum CodingKeys: String, CodingKey {

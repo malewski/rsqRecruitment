@@ -6,7 +6,7 @@
 //  Copyright © 2019 Jan Malewski. All rights reserved.
 //
 
-struct Patient: Decodable {
+struct Patient: Decodable, Equatable {
     let age: String?
     let drugs: [Drug]
 

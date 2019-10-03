@@ -15,7 +15,7 @@
 		D36D6FE62343F1AB005AA574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D6FE52343F1AB005AA574 /* AppDelegate.swift */; };
 		D36D6FED2343F1AE005AA574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36D6FEC2343F1AE005AA574 /* Assets.xcassets */; };
 		D36D6FF02343F1AE005AA574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36D6FEE2343F1AE005AA574 /* LaunchScreen.storyboard */; };
-		D36D6FFB2343F1AF005AA574 /* rsqRecruitmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D6FFA2343F1AF005AA574 /* rsqRecruitmentTests.swift */; };
+		D36D6FFB2343F1AF005AA574 /* PatientPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36D6FFA2343F1AF005AA574 /* PatientPresenterTests.swift */; };
 		D3C6544F2344FF00009EDF50 /* DrugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6544E2344FF00009EDF50 /* DrugViewController.swift */; };
 		D3C6545523455E29009EDF50 /* PatientsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6545423455E29009EDF50 /* PatientsList.swift */; };
 		D3C6545723455E46009EDF50 /* PatientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6545623455E46009EDF50 /* PatientData.swift */; };
@@ -45,7 +45,7 @@
 		D36D6FEF2343F1AE005AA574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D36D6FF12343F1AE005AA574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D36D6FF62343F1AF005AA574 /* rsqRecruitmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rsqRecruitmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D36D6FFA2343F1AF005AA574 /* rsqRecruitmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rsqRecruitmentTests.swift; sourceTree = "<group>"; };
+		D36D6FFA2343F1AF005AA574 /* PatientPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientPresenterTests.swift; sourceTree = "<group>"; };
 		D36D6FFC2343F1AF005AA574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3C6544E2344FF00009EDF50 /* DrugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugViewController.swift; sourceTree = "<group>"; };
 		D3C6545423455E29009EDF50 /* PatientsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsList.swift; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		D36D6FF92343F1AF005AA574 /* rsqRecruitmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				D36D6FFA2343F1AF005AA574 /* rsqRecruitmentTests.swift */,
+				D36D6FFA2343F1AF005AA574 /* PatientPresenterTests.swift */,
 				D36D6FFC2343F1AF005AA574 /* Info.plist */,
 			);
 			path = rsqRecruitmentTests;
@@ -270,7 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D36D6FFB2343F1AF005AA574 /* rsqRecruitmentTests.swift in Sources */,
+				D36D6FFB2343F1AF005AA574 /* PatientPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
