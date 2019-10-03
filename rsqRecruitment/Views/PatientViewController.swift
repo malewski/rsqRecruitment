@@ -31,7 +31,10 @@ class PatientViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
-        
+        setupTableView()
+    }
+
+    private func setupTableView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -81,7 +84,7 @@ extension PatientViewController: PatientView {
 
     func showDrugs(drugs: [Drug]) {
         let nextViewController = DrugViewController()
-        nextViewController.drugs = drugs
+        nextViewController.presenter = DrugPresenter(view: nextViewController, drugs: drugs)
         navigationController?.pushViewController(nextViewController, animated: true)
     }
 

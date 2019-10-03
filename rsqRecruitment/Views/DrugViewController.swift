@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol DrugView: class {
+    func showDrugs(drugs: [Drug])
+}
+
 class DrugViewController: UITableViewController {
 
     var drugs: [Drug] = []
+    var presenter: DrugPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +37,15 @@ extension DrugViewController {
         cell.textLabel?.textColor = .darkGray
         cell.backgroundColor = UIColor(red: 0.94, green: 0.86, blue: 0.76, alpha: 1.0)
         return cell
+    }
+
+}
+
+extension DrugViewController: DrugView {
+    
+    func showDrugs(drugs: [Drug]) {
+        self.drugs = drugs
+        tableView.reloadData()
     }
 
 }

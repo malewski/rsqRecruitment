@@ -20,6 +20,7 @@
 		D3C6545523455E29009EDF50 /* PatientsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6545423455E29009EDF50 /* PatientsList.swift */; };
 		D3C6545723455E46009EDF50 /* PatientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6545623455E46009EDF50 /* PatientData.swift */; };
 		D3C6545923455E69009EDF50 /* Drug.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6545823455E69009EDF50 /* Drug.swift */; };
+		D3C6545B23456B08009EDF50 /* DrugPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6545A23456B08009EDF50 /* DrugPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		D3C6545423455E29009EDF50 /* PatientsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsList.swift; sourceTree = "<group>"; };
 		D3C6545623455E46009EDF50 /* PatientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientData.swift; sourceTree = "<group>"; };
 		D3C6545823455E69009EDF50 /* Drug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drug.swift; sourceTree = "<group>"; };
+		D3C6545A23456B08009EDF50 /* DrugPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrugPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				D310DFF52344C98800D8E471 /* PatientPresenter.swift */,
+				D3C6545A23456B08009EDF50 /* DrugPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				D310DFF62344C98800D8E471 /* PatientPresenter.swift in Sources */,
 				D36D6FE62343F1AB005AA574 /* AppDelegate.swift in Sources */,
 				D310DFF42344C97500D8E471 /* Patient.swift in Sources */,
+				D3C6545B23456B08009EDF50 /* DrugPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
