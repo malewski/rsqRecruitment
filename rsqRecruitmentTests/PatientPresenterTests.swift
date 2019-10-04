@@ -48,6 +48,12 @@ class PatientPresenterTests: XCTestCase {
         XCTAssertEqual(drugs, viewSpy.testDrugs)
     }
 
+    func testShowAlert() {
+        serviceSpy.mockError = NSError(domain: "", code: 0, userInfo: nil)
+        sut.viewDidLoad()
+        XCTAssertTrue(viewSpy.alertCalled)
+    }
+
 }
 
 class PatientServiceSpy: DownloadPatient {
@@ -56,9 +62,12 @@ class PatientServiceSpy: DownloadPatient {
 
     var mockPatient: [PatientData]!
 
+    var mockError: Error!
+
     func download(success: @escaping ([PatientData]?) -> Void, failure: @escaping (Error?) -> Void) {
         downloadCalled = true
         success(mockPatient)
+        failure(mockError)
     }
 
 }
@@ -68,6 +77,7 @@ class PatientViewSpy: PatientView {
     var displayCalled = false
     var testPatient: [PatientData]!
     var testDrugs: [Drug]!
+    var alertCalled = false
 
     func displayPatient(patientList: [PatientData]) {
         displayCalled = true
@@ -76,6 +86,10 @@ class PatientViewSpy: PatientView {
 
     func showDrugs(drugs: [Drug]) {
         testDrugs = drugs
+    }
+
+    func showAlert(text: String) {
+        alertCalled = true
     }
 
 }
